@@ -1,0 +1,25 @@
+
+       {% extends "linky/_base.html" %}
+
+       {% block content %}
+       <div class="pl-6 flex flex-col justify-center mt-2 pt-4 ml-24">
+       <div class="flex items-center mt-6 ">
+        <hr>
+        <ul>
+            <p class="ml-2 font-bold">Links</p>
+            {% for link in links %}
+            <div class="border-2 border-sky-600/50 rounded mt-2 ml-2 pr-4 pt-2 pb-2 pl-2">
+                <div class="flex flex-rows justify-between ml-2">
+                    <div class="font-medium">{{link.title}}</div>
+                    <div class="bg-[#0891b2] basis-1/4 text-center w-40  border-2 border-sky-600/50 rounded-full text-white">Clicks: {{link.clicks}}</div>
+                </div>
+                <div class="pt-4">
+                    <a target="_blank" href="{% url 'root-link' link.slug %}" class="underline text-sky-400">{{link.slug}}</a>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </ul>
+        </div>
+        </div>
+      {% endblock content %}

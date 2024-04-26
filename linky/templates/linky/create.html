@@ -1,0 +1,21 @@
+{% extends "linky/_base.html" %}
+
+{% load tailwind_filters %}
+
+{% block content %}
+    <form action="" method="POST" class="pl-6 flex flex-col justify-center mt-6 pt-6 ml-24 h-96">
+        {% csrf_token %}
+        <div class="">
+            <p class="ml-2 text-2xl pb-4">Create New Link</p>   
+
+            <div class="w-2/5">
+                {{ form|crispy }}
+            </div>
+            
+            <div class="pt-8 flex fles-row w-2/5 justify-end">    
+                <input type="submit" value="Create" class="bg-[#0891b2] basis-1/4 text-center w-40  border-2 border-sky-600/50 rounded text-white transition duration-150 ease-out hover:ease-in hover:bg-rose-400 hover:border-rose-400">
+                
+        </div>
+        
+    </form>
+{% endblock content %}
